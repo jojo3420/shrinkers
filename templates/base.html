@@ -10,6 +10,11 @@
 <body>
     <h1>index</h1>
     <div>{{ welcome_msg }}</div>
-    <div>{{ username }}</div>
+    {% if member %}
+        {{ member.username }}
+        {{ member.email }}
+    {% endif %}
+    {{ name }}
+    {{ age }}
 </body>
 </html>

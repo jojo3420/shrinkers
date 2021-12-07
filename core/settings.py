@@ -16,7 +16,6 @@ from settings.utils import read_json_env_file, get_env_val_by
 
 pymysql.install_as_MySQLdb()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_extensions',
+    'debug_toolbar',
     'core',
     'shortener',
 ]
@@ -55,6 +55,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+]
+
+# Debug toolbar setting
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 ROOT_URLCONF = 'core.urls'
