@@ -12,7 +12,7 @@ class PayPlan(TimeStampedModel):
     price = models.IntegerField()
 
 
-class Member(AbstractUser):
+class Member(AbstractUser, TimeStampedModel):
     pay_plan = models.ForeignKey(PayPlan, on_delete=models.DO_NOTHING, null=True)
 
 # class UserDetail(TimeStampedModel):
